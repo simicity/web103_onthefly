@@ -5,7 +5,7 @@ const createDestination = async (req, res) => {
     const { destination, description, city, country, img_url, flag_img_url } = req.body
     const results = await pool.query(
       `INSERT INTO destinations (destination, description, city, country, img_url, flag_img_url)
-      VALUES($1, $2, $3, $4, $5, $6)) 
+      VALUES($1, $2, $3, $4, $5, $6)
       RETURNING *`,
       [destination, description, city, country, img_url, flag_img_url]
     )
